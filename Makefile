@@ -26,6 +26,8 @@ server: linklist.o packet.o player.o server.c
 	gcc linklist.o packet.o player.o server.c -pthread -lws2_32 -o server
 main: client.o packet.o main.c
 	gcc client.o packet.o main.c -I src\include -L src\lib -Wall -pthread -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lws2_32 -lSDL2_image -o main
+test:  test.c
+	gcc test.c -I src\include -L src\lib -Wall  -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lws2_32 -lSDL2_image -o test
 client.o: client.c client.h 
 	gcc client.h -pthread -lws2_32 -c client.c
 linklist.o: linklist.h linklist.c
